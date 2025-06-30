@@ -1,0 +1,45 @@
+{
+  "name": "proton-mail-app",
+  "version": "1.0.0",
+  "description": "Electron based Proton Mail app.",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Steven <hello@steve.is-a.dev> (https://steve.is-a.dev)",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^37.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.steve.protonmail",
+    "productName": "Proton Mail",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/*/{src,build,scripts,documentation}",
+      "!node_modules/.bin"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ],
+      "icon": "icons/win/128.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "icons/darwin_mac/1024.icns",
+      "category": "public.app-category.utilities"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "icons/linux/1024.png"
+    }
+  }
+}
