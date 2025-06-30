@@ -1,6 +1,8 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
+if (require('electron-squirrel-startup')) app.quit();
+
 function createWindow () {
 const iconPath = process.platform === 'darwin'
     ? path.join(__dirname, 'icons', 'darwin_mac', '1024.icns')
